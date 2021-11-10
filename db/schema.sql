@@ -21,34 +21,31 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: companies; Type: TABLE; Schema: public; Owner: d20
+-- Name: creatures; Type: TABLE; Schema: public; Owner: d20
 --
 
-CREATE TABLE public.companies (
-    id integer NOT NULL,
-    name text NOT NULL,
-    age integer NOT NULL,
-    address character(50),
-    salary real
+CREATE TABLE public.creatures (
+    name character varying(64) NOT NULL,
+    doc json NOT NULL
 );
 
 
-ALTER TABLE public.companies OWNER TO d20;
+ALTER TABLE public.creatures OWNER TO d20;
 
 --
--- Data for Name: companies; Type: TABLE DATA; Schema: public; Owner: d20
+-- Data for Name: creatures; Type: TABLE DATA; Schema: public; Owner: d20
 --
 
-COPY public.companies (id, name, age, address, salary) FROM stdin;
+COPY public.creatures (name, doc) FROM stdin;
 \.
 
 
 --
--- Name: companies companies_pkey; Type: CONSTRAINT; Schema: public; Owner: d20
+-- Name: creatures creatures_pkey; Type: CONSTRAINT; Schema: public; Owner: d20
 --
 
-ALTER TABLE ONLY public.companies
-    ADD CONSTRAINT companies_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.creatures
+    ADD CONSTRAINT creatures_pkey PRIMARY KEY (name);
 
 
 --
