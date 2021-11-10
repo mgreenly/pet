@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'pet'
+
+Pet::App.run
+
+
+# result.execute('select current_time;')
+
+# ActiveRecord::Base.connection.execute("SELECT CURRENT_TIME;")
